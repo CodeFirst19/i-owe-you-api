@@ -59,7 +59,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Handle unavailable routes
+// Handle unavailable routes.
 app.all('*', (req, res, next) => {
   console.log('404 Not Found');
   next(new AppError(`Cannot find ${req.originalUrl} on this server.`, 404));
